@@ -21,61 +21,58 @@ Revenue = Users * Purchase Rate * ARPU
 Ad Revenue
 Revenue = (Users * Ad Impressions / 1000) * eCPM
 
-a) Which variant will have the most daily active users after 15 days?
+## 🔍 Task 1: Key Findings
 
-Using interpolated retention values for Days 0–15 and assuming 20,000 new installs per day, the cumulative DAU over the first 15 days is:
+### a) Daily Active Users (DAU) after 15 Days
+**Question:** Which variant retains more users?
 
-Variant A: 846,200
+*   **Winner:** **Variant B**
+*   **Insight:** Although Variant A has better initial retention (D1: 53% vs 48%), Variant B demonstrates significantly better long-term retention (D14: 9% vs 6%). By Day 15, the "leaky bucket" effect of Variant A causes it to fall behind Variant B in total active users.
+*   **Statistical Note:** The difference in D7 and D14 retention is statistically significant ($p < 0.05$).
+*   
+<img width="1189" height="590" alt="download" src="https://github.com/user-attachments/assets/81ce5e1f-ddc6-411f-b400-0acb478f4e39" />
 
-Variant B: 834,700
 
-👉 Winner (DAU after 15 days): Variant A
+---
 
-b) Which variant earns the most total money by Day 15?
+### b) Total Revenue by Day 15
+**Question:** Which variant earns the most money in the short term?
 
-Daily revenue =
-In-app purchase revenue + Ad revenue
+*   **Winner:** **Variant A**
+*   **Insight:** In the short term (15 days), Variant A generates more revenue. This is driven by the significantly higher **Ad Impressions per DAU (2.3 vs 1.6)** and higher early retention (D1), which outweighs Variant B's superior monetization metrics (higher eCPM and Purchase Ratio).
 
-Using purchase ratios, eCPM, ad impressions per DAU, and retention:
+<img width="1033" height="549" alt="download" src="https://github.com/user-attachments/assets/64e6ea38-35a2-46fc-b487-695e5581c290" />
 
-Variant A total revenue (Day 1–15): $148,118.85
+---
 
-Variant B total revenue (Day 1–15): $145,888.87
+### c) Total Revenue by Day 30
+**Question:** Does the choice change if we look at a longer timeframe?
 
-👉 Winner (Day 15 revenue): Variant A
+*   **Winner:** **Variant B**
+*   **Insight:** **The strategy flips.** By Day 30, the compounding effect of Variant B's superior late-stage retention (D14+) allows it to overtake Variant A. The higher Life-Time Value (LTV) of users in Variant B compensates for the lower ad volume.
 
-c) Does the winner change if we extend the window to Day 30?
+<img width="1033" height="549" alt="download" src="https://github.com/user-attachments/assets/186f2b81-c4b3-46ea-8bbc-b7d3bf94f51d" />
 
-After 30 days the slower-decaying retention of Variant B becomes an advantage.
+---
 
-Variant A (Day 30 total): $334,411.42
+### d) Scenario: 10-Day Sale (Day 15-24)
+**Question:** If we run a sale boosting conversion by +1%, who wins?
 
-Variant B (Day 30 total): $352,865.84
+*   **Winner:** **Variant B**
+*   **Insight:** Variant B wins by a larger margin. Since Variant B retains users better in the later days (D14+), it has a larger pool of active users available to participate in the sale occurring between Day 15 and 24.
 
-👉 Winner (Day 30 revenue): Variant B
-Yes — the winner changes when the window is extended.
+---
 
-d) What if we run a 10-day sale from Day 15 (+1% absolute purchase rate)?
+### e) Scenario: New User Source (Day 20)
+**Question:** Introducing a new user source (8k/day) with exponential retention curves.
 
-Boosting purchase rate for Days 15–24:
+*   **Winner:** **Variant B**
+*   **Insight:** Even with a mixed traffic source, the fundamental economics remain the same. Variant B's structural advantages in retention and purchase conversion result in higher total revenue by Day 30.
 
-Variant B benefits more due to better mid-to-long-term retention.
+---
 
-Variant B overtakes Variant A even more strongly in this scenario.
-
-👉 Winner with 10-day sale: Variant B
-
-e) Adding a new user source on Day 20 (12k old + 8k new users/day)
-
-New users follow exponential retention:
-
-A (new): 0.58·e^(−0.12(x−1))
-
-B (new): 0.52·e^(−0.10(x−1))
-
-Variant B maintains a stronger tail and captures more monetization from both old + new user streams.
-
-👉 Winner with new user source: Variant B
+### f) Strategic Recommendation
+**Decision:** If we can only make one improvement, we should prioritize **Option 2: Add the new, permanent user source.**
 
 
 
