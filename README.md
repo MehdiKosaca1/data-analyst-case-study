@@ -62,18 +62,16 @@ DIFFERENCE: $2,229.98 (Variant A is more profitable)
 
 <img width="1033" height="549" alt="download" src="https://github.com/user-attachments/assets/64e6ea38-35a2-46fc-b487-695e5581c290" />
 
-==================================================
-   HYPOTHESIS TEST ANALYSIS (Z-TEST)
-==================================================
-Total Sample Size (Users per Variant): 300,000
---------------------------------------------------------------------------------
-METRIC               | VAR A    | VAR B    | P-VALUE    | RESULT
---------------------------------------------------------------------------------
-Purchase Ratio       | 3.05%   | 3.15%   | 0.0254     | SIGNIFICANT ✅
-Day 1  Retention      | 53.0%    | 48.0%    | 0.0000     | SIGNIFICANT ✅
-Day 7  Retention      | 17.0%    | 19.0%    | 0.0000     | SIGNIFICANT ✅
-Day 14 Retention      | 6.0%    | 9.0%    | 0.0000     | SIGNIFICANT ✅
---------------------------------------------------------------------------------
+
+## HYPOTHESIS TEST ANALYSIS (Z-TEST)
+
+| Metric           | Variant A | Variant B | P-Value | Result        |
+| ---------------- | --------- | --------- | ------- | ------------- |
+| Purchase Ratio   | 3.05%     | 3.15%     | 0.0254  | SIGNIFICANT ✅ |
+| Day 1 Retention  | 53.0%     | 48.0%     | 0.0000  | SIGNIFICANT ✅ |
+| Day 7 Retention  | 17.0%     | 19.0%     | 0.0000  | SIGNIFICANT ✅ |
+| Day 14 Retention | 6.0%      | 9.0%      | 0.0000  | SIGNIFICANT ✅ |
+
 
 ## Variant B has STATISTICALLY SIGNIFICANT better long-term retention (D7/D14).
 ---
@@ -93,18 +91,16 @@ Yes — the winner changes when the window is extended.
 
 <img width="1033" height="549" alt="download" src="https://github.com/user-attachments/assets/186f2b81-c4b3-46ea-8bbc-b7d3bf94f51d" />
 
-==================================================
-   HYPOTHESIS TEST ANALYSIS (Z-TEST)
-==================================================
-Total Sample Size (Users per Variant): 600,000
---------------------------------------------------------------------------------
-METRIC               | VAR A    | VAR B    | P-VALUE    | RESULT
---------------------------------------------------------------------------------
-Purchase Ratio       | 3.05%   | 3.15%   | 0.0016     | SIGNIFICANT ✅
-D1 Retention         | 53.0%    | 48.0%    | 0.0000     | SIGNIFICANT ✅
-D7 Retention         | 17.0%    | 19.0%    | 0.0000     | SIGNIFICANT ✅
-D14 Retention        | 6.0%    | 9.0%    | 0.0000     | SIGNIFICANT ✅
---------------------------------------------------------------------------------
+
+## HYPOTHESIS TEST ANALYSIS (Z-TEST)
+
+| Metric           | Variant A | Variant B | P-Value | Result        |
+| ---------------- | --------- | --------- | ------- | ------------- |
+| Purchase Ratio   | 3.05%     | 3.15%     | 0.0016  | SIGNIFICANT ✅ |
+| Day 1 Retention  | 53.0%     | 48.0%     | 0.0000  | SIGNIFICANT ✅ |
+| Day 7 Retention  | 17.0%     | 19.0%     | 0.0000  | SIGNIFICANT ✅ |
+| Day 14 Retention | 6.0%      | 9.0%      | 0.0000  | SIGNIFICANT ✅ |
+
 ## It generates more revenue AND has statistically significant better long-term retention.
 ---
 
@@ -120,20 +116,17 @@ DIFFERENCE: $20,990.13 (Variant B is more profitable)
 
 <img width="1033" height="549" alt="download" src="https://github.com/user-attachments/assets/4dbbd579-3a7c-425c-8b06-b7570f6068b4" />
 
-============================================================
-   HYPOTHESIS TEST ANALYSIS (Z-TEST)
-============================================================
-Total Sample Size: 600,000 users
-Sale Period Sample Size: 200,000 users
---------------------------------------------------------------------------------
-METRIC                    | VAR A    | VAR B    | P-VALUE    | RESULT
---------------------------------------------------------------------------------
-Base Purchase Ratio       | 3.05%   | 3.15%   | 0.0016     | SIGNIFICANT ✅
-Sale Period Purchase      | 4.05%   | 4.15%   | 0.1108     | Not Sig. ❌
-D1 Retention              | 53.0%    | 48.0%    | 0.0000     | SIGNIFICANT ✅
-D7 Retention              | 17.0%    | 19.0%    | 0.0000     | SIGNIFICANT ✅
-D14 Retention             | 6.0%    | 9.0%    | 0.0000     | SIGNIFICANT ✅
---------------------------------------------------------------------------------
+## HYPOTHESIS TEST ANALYSIS (Z-TEST)
+
+| Metric               | Variant A | Variant B | P-Value | Result            |
+| -------------------- | --------- | --------- | ------- | ----------------- |
+| Base Purchase Ratio  | 3.05%     | 3.15%     | 0.0016  | SIGNIFICANT ✅     |
+| Sale Period Purchase | 4.05%     | 4.15%     | 0.1108  | Not Significant ❌ |
+| Day 1 Retention      | 53.0%     | 48.0%     | 0.0000  | SIGNIFICANT ✅     |
+| Day 7 Retention      | 17.0%     | 19.0%     | 0.0000  | SIGNIFICANT ✅     |
+| Day 14 Retention     | 6.0%      | 9.0%      | 0.0000  | SIGNIFICANT ✅     |
+
+
 Variant B shows stronger long-term retention (D7, D14), while A only leads in D1. Purchase differences are mostly insignificant.
 ---
 
@@ -151,17 +144,15 @@ DIFFERENCE: $7,929.95 (Variant B is more profitable)
 
 <img width="1033" height="549" alt="download" src="https://github.com/user-attachments/assets/11a8b469-6d9d-43d0-84a2-48ef45b10fc2" />
 
-========================================
-   HYPOTHESIS TEST RESULTS
-========================================
-Total Analyzed Users (Per Variant): 600,000
---------------------------------------------------------------------------------
-METRIC               | VARIANT A  | VARIANT B  | P-VALUE    | RESULT
---------------------------------------------------------------------------------
-Purchase Ratio       | 3.05%     | 3.15%     | 0.0016     | SIGNIFICANT DIFF ✅
-D1 Retention         | 53.0%      | 48.0%      | 0.0000     | SIGNIFICANT DIFF ✅
-D7 Retention         | 17.0%      | 19.0%      | 0.0000     | SIGNIFICANT DIFF ✅
---------------------------------------------------------------------------------
+
+## HYPOTHESIS TEST RESULTS
+
+| Metric          | Variant A | Variant B | P-Value | Result             |
+| --------------- | --------- | --------- | ------- | ------------------ |
+| Purchase Ratio  | 3.05%     | 3.15%     | 0.0016  | SIGNIFICANT DIFF ✅ |
+| Day 1 Retention | 53.0%     | 48.0%     | 0.0000  | SIGNIFICANT DIFF ✅ |
+| Day 7 Retention | 17.0%     | 19.0%     | 0.0000  | SIGNIFICANT DIFF ✅ |
+
 
 STATISTICAL VERDICT: The difference is statistically significant based on user behavior. The results are reliable.
 
