@@ -101,7 +101,7 @@ Yes — the winner changes.
 | Day 7 Retention  | 17.0%     | 19.0%     | 0.0000  | SIGNIFICANT ✅ |
 | Day 14 Retention | 6.0%      | 9.0%      | 0.0000  | SIGNIFICANT ✅ |
 
-## It generates more revenue AND has statistically significant better long-term retention.
+* It generates more revenue AND has statistically significant better long-term retention.
 ---
 
 ### d) Scenario: 10-Day Sale (Day 15-24)
