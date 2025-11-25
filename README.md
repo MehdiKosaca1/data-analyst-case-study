@@ -174,6 +174,22 @@ improvements:
 | **10-day sale**               | Short-term IAP boost                 | Temporary (10 days) | Helps B slightly      |
 | **New permanent user source** | Sustained retention + revenue growth | Long-term           | Large advantage for B |
 
+# Task 2: User Behavior & Game Economy Analysis
+
+## Overview
+This module focuses on **Exploratory Data Analysis (EDA)** and **User Segmentation** to uncover hidden trends in player behavior, session patterns, and monetization dynamics. By analyzing millions of event rows, this study identifies key drivers of retention and revenue, providing actionable recommendations for product and marketing teams.
+
+## 📂 Data Processing Pipeline
+
+The analysis pipeline processes raw daily activity logs through the following stages:
+
+1.  **Data Ingestion & Merging:**
+    *   Merged 17 separate CSV files (`000...00` to `000...16`) into a single master DataFrame containing **7.2M+ rows**.
+    *   Verified data integrity by checking head/tail consistency to ensure no row shifts occurred during merging.
+2.  **Cleaning & Preprocessing:**
+    *   **Missing Values:** Handled missing `country` data (MCAR) by dropping rows (<0.2% data loss).
+    *   **Type Conversion:** Converted `event_date` and `install_date` to datetime objects.
+    *   **Feature Engineering:** Created metrics such as `days_since_install`, `win_rate`, `total_revenue`, and `user_lifecycle`.
 
 
 
@@ -181,4 +197,33 @@ improvements:
 
 
 
+### 2. RFM Segmentation (Recency, Frequency, Monetary)
+Used RFM analysis to score users on a scale of 1-5 and categorize them:
+*   **Champions:** High spend, recent login, frequent play.
+*   **At Risk:** Previously loyal/frequent, but haven't logged in recently.
+*   **Insight:** The game excels at **Acquisition** but struggles with **Retention**. A large portion of the user base falls into the "At Risk" category.
 
+<img width="855" height="545" alt="download" src="https://github.com/user-attachments/assets/8ca57eb9-4841-4e3b-92c1-4ba94e061cbf" />
+
+When we examine the relationship between the time spent on the first day and the revenue generated, we observe a nonlinear, exponential increase. Users who spend less than 20 minutes in the game on their first day ("Tourist" and "Potential") generate limited revenue, whereas users who spend more than 20 minutes—the "Fanatic" group—have an average revenue approximately five times higher than the next lower segment.
+
+The game's first-day experience (FTUE) should be redesigned to keep users engaged for at least 20 minutes. For example, providing a "timed, powerful reward" at the 15th minute could push users past this critical 20-minute threshold, potentially increasing revenue potential fivefold.
+
+### 3. COUNTRY-BASED REVENUE BEHAVIOR (IAP vs ADS)
+*   **Finding:**
+    *   **Tier 1 (US, DE):** Revenue is dominated by **IAP (In-App Purchases)**.
+    *   **Tier 2/3 (RU, IN):** IAP is low, but **Ad Revenue** makes up 30-50% of the total value.
+
+<img width="1010" height="608" alt="download" src="https://github.com/user-attachments/assets/5e94f213-51d5-4c46-ae74-276da7f45e0c" />
+
+The USA and Germany account for the majority of total revenue, and almost all of this revenue comes from IAP (In-App Purchases).
+
+Let's pay attention to Russia and India at the bottom of the list. While the yellow bar (IAP) is very low, the blue bar (Ads) accounts for a significant portion of total revenue (30%-50%). We can say that players in these countries spend less compared to players in other countries.
+
+### 4. Weekday vs Weekend: Player Activity and Spending
+
+<img width="1070" height="526" alt="download" src="https://github.com/user-attachments/assets/7eb42403-7dd4-4578-955d-03667a943e19" />
+
+Activity (gray bars) and revenue (green line) show a sharp increase starting Thursday. Players are entering weekend mode early. Both the number of players and their spending peak on Friday (≈ $0.142 revenue).
+Major sales events should definitely start on Thursday evening to capture the upward trend.
+Special Sunday-only discounts or “One-Day-Only Costume” promotions can be used to lift the green line (revenue) that drops on Sunday.
