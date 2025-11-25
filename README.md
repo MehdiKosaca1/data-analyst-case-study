@@ -21,9 +21,25 @@ Revenue = Users * Purchase Rate * ARPU
 Ad Revenue
 Revenue = (Users * Ad Impressions / 1000) * eCPM
 
+--------------------------
+*   **Language:** Python 3.x
+*   **Libraries:** `pandas`, `numpy`, `scipy` (interpolation), `matplotlib` (visualization), `statsmodels` (hypothesis testing).
+*   **Retention Modeling:**
+    *   Since only specific data points (D1, D3, D7, D14) were provided, **Linear Interpolation (`interp1d`)** was used to estimate retention rates for every specific day (Day 0 to Day 30).
+    *   For the "New User Source" scenario, an exponential decay model ($Retention = a \cdot e^{b(x-1)}$) was implemented.
+*   **Revenue Calculation:**
+    *   **IAP Revenue:** $DAU \times Purchase Ratio \times Avg Purchase Price$
+    *   **Ad Revenue:** $DAU \times Ad Impressions/DAU \times (eCPM / 1000)$
+*   **Statistical Significance:** Two-proportions Z-tests were conducted (95% Confidence Interval) to ensure differences in Purchase Ratios and Retention rates were not due to chance.
+
+
 ## 🔍 Task 1: Key Findings
 
-### a) Which variant will have the most daily active users after 15 days?
+### a)  Daily Active Users (DAU) after 15 Days
+
+**Question:** Which variant retains more users?
+
+*   **Winner:** **Variant B**
 
 Using interpolated retention values for Days 0–15 and assuming 20,000 new installs per day, the cumulative DAU over the first 15 days is:
 
@@ -40,7 +56,7 @@ Variant B: 834,700
 ---
 
 ### b) Total Revenue by Day 15
-**Question:** Which variant earns the most money in the short term?
+**Question:** Which variant earns the most total money by Day 15?
 
 *   **Winner:** **Variant A**
 
@@ -55,20 +71,33 @@ Variant B total revenue (Day 1–15): $145,888.87
 ---
 
 ### c) Total Revenue by Day 30
-**Question:** Does the choice change if we look at a longer timeframe?
+**Question:**  Does the winner change if we extend the window to Day 30?
 
 *   **Winner:** **Variant B**
-*   **Insight:** **The strategy flips.** By Day 30, the compounding effect of Variant B's superior late-stage retention (D14+) allows it to overtake Variant A. The higher Life-Time Value (LTV) of users in Variant B compensates for the lower ad volume.
+After 30 days the slower-decaying retention of Variant B becomes an advantage.
+
+Variant A (Day 30 total): $334,411.42
+
+Variant B (Day 30 total): $352,865.84
+
+Yes — the winner changes when the window is extended.
 
 <img width="1033" height="549" alt="download" src="https://github.com/user-attachments/assets/186f2b81-c4b3-46ea-8bbc-b7d3bf94f51d" />
 
 ---
 
 ### d) Scenario: 10-Day Sale (Day 15-24)
-**Question:** If we run a sale boosting conversion by +1%, who wins?
+**Question:** What if we run a 10-day sale from Day 15 (+1% absolute purchase rate)?
 
 *   **Winner:** **Variant B**
-*   **Insight:** Variant B wins by a larger margin. Since Variant B retains users better in the later days (D14+), it has a larger pool of active users available to participate in the sale occurring between Day 15 and 24.
+*  Boosting purchase rate for Days 15–24:
+
+Variant B benefits more due to better mid-to-long-term retention.
+
+Variant B overtakes Variant A even more strongly in this scenario.
+
+<img width="1033" height="549" alt="download" src="https://github.com/user-attachments/assets/4dbbd579-3a7c-425c-8b06-b7570f6068b4" />
+
 
 ---
 
@@ -76,12 +105,26 @@ Variant B total revenue (Day 1–15): $145,888.87
 **Question:** Introducing a new user source (8k/day) with exponential retention curves.
 
 *   **Winner:** **Variant B**
-*   **Insight:** Even with a mixed traffic source, the fundamental economics remain the same. Variant B's structural advantages in retention and purchase conversion result in higher total revenue by Day 30.
+
+New users follow exponential retention:
+
+A (new): 0.58·e^(−0.12(x−1))
+
+B (new): 0.52·e^(−0.10(x−1))
+
+Variant B maintains a stronger tail and captures more monetization from both old + new user streams.
+
+<img width="1033" height="549" alt="download" src="https://github.com/user-attachments/assets/11a8b469-6d9d-43d0-84a2-48ef45b10fc2" />
 
 ---
 
 ### f) Strategic Recommendation
 **Decision:** If we can only make one improvement, we should prioritize **Option 2: Add the new, permanent user source.**
+| Option                        | Effect                               | Duration            | Winner                |
+| ----------------------------- | ------------------------------------ | ------------------- | --------------------- |
+| **10-day sale**               | Short-term IAP boost                 | Temporary (10 days) | Helps B slightly      |
+| **New permanent user source** | Sustained retention + revenue growth | Long-term           | Large advantage for B |
+
 
 
 
