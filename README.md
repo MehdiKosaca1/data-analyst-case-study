@@ -189,25 +189,60 @@ The analysis pipeline processes raw daily activity logs through the following st
 2.  **Cleaning & Preprocessing:**
     *   **Missing Values:** Handled missing `country` data (MCAR) by dropping rows (<0.2% data loss).
     *   **Type Conversion:** Converted `event_date` and `install_date` to datetime objects.
-    *   **Feature Engineering:** Created metrics such as `days_since_install`, `win_rate`, `total_revenue`, and `user_lifecycle`.
+
+## 🔍 Distribution Overview
+
+### 1. Total Sessions by Platform
+
+<img width="997" height="468" alt="download" src="https://github.com/user-attachments/assets/1894fd76-c3b7-4356-90cf-55863b7dc77e" />
+
+* The Median Behavior of iOS and Android users is surprisingly similar. In other words, an average iPhone user and a Samsung user engage with the game at roughly the same frequency.
+
+### 2. Total Sessions by Platform
+
+<img width="997" height="468" alt="download" src="https://github.com/user-attachments/assets/88a9bf2f-abb7-4b9d-983a-2f9cc835f377" />
+
+* There is a significant outlier in the Ukraine data. While the maximum session counts in other countries remain around 15–18, some users in Ukraine reach 35+ sessions.
+
+### 3. Daily Active Users Lifecycle Distribution
+
+<img width="1410" height="671" alt="download" src="https://github.com/user-attachments/assets/c359a9cc-66c0-487d-8646-c2363924afd4" />
+
+* More than 50% of the chart is dominated by the "Long-term Player (30+ Days)" segment. This indicates that the game not only attracts curious users but also successfully retains a loyal player base, demonstrating high stickiness.
 
 
+## 🔍 Key Analyses & Insights
 
-
-
-
-
-### 2. RFM Segmentation (Recency, Frequency, Monetary)
-Used RFM analysis to score users on a scale of 1-5 and categorize them:
-*   **Champions:** High spend, recent login, frequent play.
-*   **At Risk:** Previously loyal/frequent, but haven't logged in recently.
-*   **Insight:** The game excels at **Acquisition** but struggles with **Retention**. A large portion of the user base falls into the "At Risk" category.
+### 1. Average User Revenue by Day 1 Behavior
+Segmented users based on first-day playtime:
+*   **Tourist (<5 min)** Very short playtime, low engagement and revenue.
+*   **Potential (5-20 min)** Moderate playtime, some engagement and revenue potential.
+*   **Fanatic (>20 min)** Long playtime, highly engaged, generates the highest revenue.
 
 <img width="855" height="545" alt="download" src="https://github.com/user-attachments/assets/8ca57eb9-4841-4e3b-92c1-4ba94e061cbf" />
 
-When we examine the relationship between the time spent on the first day and the revenue generated, we observe a nonlinear, exponential increase. Users who spend less than 20 minutes in the game on their first day ("Tourist" and "Potential") generate limited revenue, whereas users who spend more than 20 minutes—the "Fanatic" group—have an average revenue approximately five times higher than the next lower segment.
+* When we examine the relationship between the time spent on the first day and the revenue generated, we observe a nonlinear, exponential increase. Users who spend less than 20 minutes in the game on their first day ("Tourist" and "Potential") generate limited revenue, whereas users who spend more than 20 minutes—the "Fanatic" group—have an average revenue approximately five times higher than the next lower segment.
 
-The game's first-day experience (FTUE) should be redesigned to keep users engaged for at least 20 minutes. For example, providing a "timed, powerful reward" at the 15th minute could push users past this critical 20-minute threshold, potentially increasing revenue potential fivefold.
+* The game's first-day experience (FTUE) should be redesigned to keep users engaged for at least 20 minutes. For example, providing a "timed, powerful reward" at the 15th minute could push users past this critical 20-minute threshold, potentially increasing revenue potential fivefold.
+
+### 2. RFM Segmentation (Recency, Frequency, Monetary)
+
+**RFM Analysis:**
+* What does it measure? It evaluates a user's overall health as of today.
+
+Used RFM analysis to categorize users based on Recency (R) and Frequency (F):
+*   **Champions:** High spend, frequent play, recent activity.
+*   **Loyal Users:** Frequent and recent players, slightly lower than Champions.
+*   **wcomers:** Recently joined but low activity.
+*   **Lost Loyals:** Previously frequent but inactive now.
+*   **Sleeping (Lost):** Low activity and low recency.
+*   **At Risk / Average:** Moderate engagement, potential to churn.
+
+<img width="1097" height="545" alt="download" src="https://github.com/user-attachments/assets/b7f6f2ee-e836-4c42-9e05-e77bb772c299" />
+
+* This table shows that the game performs well on the Acquisition side but struggles with Retention. While new users are successfully brought in, many fail to become loyal players and instead fall into the "At Risk" or "Sleeping" segments.
+* **Recommended Action:**
+* Instead of focusing primarily on acquiring new users, our priority should be to convert the large "At Risk" user base into loyal players.
 
 ### 3. COUNTRY-BASED REVENUE BEHAVIOR (IAP vs ADS)
 *   **Finding:**
@@ -216,14 +251,32 @@ The game's first-day experience (FTUE) should be redesigned to keep users engage
 
 <img width="1010" height="608" alt="download" src="https://github.com/user-attachments/assets/5e94f213-51d5-4c46-ae74-276da7f45e0c" />
 
-The USA and Germany account for the majority of total revenue, and almost all of this revenue comes from IAP (In-App Purchases).
+* The USA and Germany account for the majority of total revenue, and almost all of this revenue comes from IAP (In-App Purchases).
 
-Let's pay attention to Russia and India at the bottom of the list. While the yellow bar (IAP) is very low, the blue bar (Ads) accounts for a significant portion of total revenue (30%-50%). We can say that players in these countries spend less compared to players in other countries.
+* Let's pay attention to Russia and India at the bottom of the list. While the yellow bar (IAP) is very low, the blue bar (Ads) accounts for a significant portion of total revenue (30%-50%). We can say that players in these countries spend less compared to players in other countries.
 
 ### 4. Weekday vs Weekend: Player Activity and Spending
 
 <img width="1070" height="526" alt="download" src="https://github.com/user-attachments/assets/7eb42403-7dd4-4578-955d-03667a943e19" />
 
-Activity (gray bars) and revenue (green line) show a sharp increase starting Thursday. Players are entering weekend mode early. Both the number of players and their spending peak on Friday (≈ $0.142 revenue).
-Major sales events should definitely start on Thursday evening to capture the upward trend.
-Special Sunday-only discounts or “One-Day-Only Costume” promotions can be used to lift the green line (revenue) that drops on Sunday.
+* Activity (gray bars) and revenue (green line) show a sharp increase starting Thursday. Players are entering weekend mode early. Both the number of players and their spending peak on Friday (≈ $0.142 revenue).
+* Major sales events should definitely start on Thursday evening to capture the upward trend.
+* Special Sunday-only discounts or “One-Day-Only Costume” promotions can be used to lift the green line (revenue) that drops on Sunday.
+
+### 5. Balance Scale: Does Spending Affect Win Rate?
+
+*   **Categorized players by spending levels:**
+* Free Player (0$): No spending.
+* Minnow (0-5$): Low spender.
+* Dolphin (5-20$): Moderate spender.
+* Whale (>20$): High spender.
+
+<img width="846" height="545" alt="download" src="https://github.com/user-attachments/assets/d0fad7c6-e3c3-44d2-a23b-8aaa2f830ba5" />
+
+* The most critical finding in the chart is that the average win rate of players who spend nothing (Free Players) remains around 40%, while even a minimal spender (Minnow) sees their win rate suddenly jump to about 62%.
+
+## Recommendations
+* Data on game sessions played with friends should be collected and analyzed. In particular, the frequency with which players join games with their friends and their co-play behavior can be examined.
+* Develop a Rapid Intervention Strategy for the "Tourist" Segment Lost in the First Days Tourist users quit the game within <5 minutes.
+* Balance Intervention Needed for Spending Players (Minnows) The sudden increase in win rates for paying players, while Free-to-Play users remain stuck at a 40% win rate, indicates a risk of early churn.
+* In countries like Russia and India, where IAP is low but ad revenue is high, increasing ad impressions could boost monetization.
