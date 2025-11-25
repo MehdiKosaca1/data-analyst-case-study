@@ -23,14 +23,17 @@ Revenue = (Users * Ad Impressions / 1000) * eCPM
 
 ## 🔍 Task 1: Key Findings
 
-### a) Daily Active Users (DAU) after 15 Days
-**Question:** Which variant retains more users?
+### a) Which variant will have the most daily active users after 15 days?
 
-*   **Winner:** **Variant B**
-*   **Insight:** Although Variant A has better initial retention (D1: 53% vs 48%), Variant B demonstrates significantly better long-term retention (D14: 9% vs 6%). By Day 15, the "leaky bucket" effect of Variant A causes it to fall behind Variant B in total active users.
-*   **Statistical Note:** The difference in D7 and D14 retention is statistically significant ($p < 0.05$).
-*   
-<img width="1189" height="590" alt="download" src="https://github.com/user-attachments/assets/81ce5e1f-ddc6-411f-b400-0acb478f4e39" />
+Using interpolated retention values for Days 0–15 and assuming 20,000 new installs per day, the cumulative DAU over the first 15 days is:
+
+Variant A: 846,200
+
+Variant B: 834,700
+
+** 👉 Winner (DAU after 15 days): Variant A 
+<img width="1190" height="590" alt="download" src="https://github.com/user-attachments/assets/43234343-6603-41a9-86ee-13c1344f0d49" />
+
 
 
 ---
