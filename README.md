@@ -31,7 +31,8 @@ Variant A: 846,200
 
 Variant B: 834,700
 
-** 👉 Winner (DAU after 15 days): Variant A 
+## 👉 Winner (DAU after 15 days): Variant A 
+
 <img width="1190" height="590" alt="download" src="https://github.com/user-attachments/assets/43234343-6603-41a9-86ee-13c1344f0d49" />
 
 
@@ -42,7 +43,12 @@ Variant B: 834,700
 **Question:** Which variant earns the most money in the short term?
 
 *   **Winner:** **Variant A**
-*   **Insight:** In the short term (15 days), Variant A generates more revenue. This is driven by the significantly higher **Ad Impressions per DAU (2.3 vs 1.6)** and higher early retention (D1), which outweighs Variant B's superior monetization metrics (higher eCPM and Purchase Ratio).
+
+Using purchase ratios, eCPM, ad impressions per DAU, and retention:
+
+Variant A total revenue (Day 1–15): $148,118.85
+
+Variant B total revenue (Day 1–15): $145,888.87
 
 <img width="1033" height="549" alt="download" src="https://github.com/user-attachments/assets/64e6ea38-35a2-46fc-b487-695e5581c290" />
 
