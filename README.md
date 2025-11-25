@@ -33,8 +33,9 @@ Winner: Variant B by 2529 users
 
 <img width="1190" height="590" alt="download" src="https://github.com/user-attachments/assets/43234343-6603-41a9-86ee-13c1344f0d49" />
 
+
 ===========================================================
-   STATISTICAL SIGNIFICANCE TEST (Z-Test)
+    STATISTICAL SIGNIFICANCE TEST (Z-Test)
 
 Metric          | Var A    | Var B    | P-Value    | Result
 ----------------------------------------------------------------------
@@ -42,7 +43,7 @@ Day 1  Retention | 53.0%   | 48.0%   | 0.0000     | SIGNIFICANT ✅
 Day 3  Retention | 27.0%   | 25.0%   | 0.0000     | SIGNIFICANT ✅
 Day 7  Retention | 17.0%   | 19.0%   | 0.0000     | SIGNIFICANT ✅
 Day 14 Retention | 6.0%   | 9.0%   | 0.0000     | SIGNIFICANT ✅
-----------------------------------------------------------------------
+
 STATISTICAL CONCLUSION:
 The improvement in mid-to-long term retention (D7, D14) is statistically significant.
 
