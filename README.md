@@ -73,11 +73,11 @@ DIFFERENCE: $2,229.98 (Variant A is more profitable)
 | Day 14 Retention | 6.0%      | 9.0%      | 0.0000  | SIGNIFICANT ✅ |
 
 
-## Variant B has STATISTICALLY SIGNIFICANT better long-term retention (D7/D14).
+* Variant B has STATISTICALLY SIGNIFICANT better long-term retention (D7/D14).
 ---
 
 ### c) Total Revenue by Day 30
-**Question:**  Does the winner change if we extend the window to Day 30?
+**Question:**  If we look at the total money earned by Day 30 instead, does our choice change?
 
 *   **Winner:** **Variant B**
 
@@ -85,7 +85,7 @@ Total Revenue Variant A (Day 30): $334,411.42
 Total Revenue Variant B (Day 30): $352,865.84
 DIFFERENCE: $18,454.42 (Variant B is more profitable)
 
-Yes — the winner changes when the window is extended.
+Yes — the winner changes.
 
 ## 👉 Winner Variant B
 
@@ -105,9 +105,11 @@ Yes — the winner changes when the window is extended.
 ---
 
 ### d) Scenario: 10-Day Sale (Day 15-24)
-**Question:** What if we run a 10-day sale from Day 15 (+1% absolute purchase rate)?
+**Question:** What if we run a 10-day sale starting on Day 15 (boosting everyone's purchase rate by
+1%)? Does this change which variant earns more total money by Day 30?
 
 *   **Winner:** **Variant B**
+
 Total Revenue Variant A (Day 30 with Sale): $372,318.56
 Total Revenue Variant B (Day 30 with Sale): $393,308.70
 DIFFERENCE: $20,990.13 (Variant B is more profitable)
@@ -127,11 +129,13 @@ DIFFERENCE: $20,990.13 (Variant B is more profitable)
 | Day 14 Retention     | 6.0%      | 9.0%      | 0.0000  | SIGNIFICANT ✅     |
 
 
-Variant B shows stronger long-term retention (D7, D14), while A only leads in D1. Purchase differences are mostly insignificant.
+* Variant B shows stronger long-term retention (D7, D14), while A only leads in D1. Purchase differences are mostly insignificant.
 ---
 
 ### e) Scenario: New User Source (Day 20)
-**Question:** Introducing a new user source (8k/day) with exponential retention curves.
+**Question:** On Day 20 we add a new user source. From then on, we get 12,000 users from the original
+source and 8,000 from this new one. The new users' retention is described by these formulas.
+With this mix of old and new users, which variant makes more total money by Day 30?
 
 *   **Winner:** **Variant B**
 
@@ -139,7 +143,6 @@ Total Revenue Variant A (Day 30 with New Source): $323,998.06
 Total Revenue Variant B (Day 30 with New Source): $331,928.01
 DIFFERENCE: $7,929.95 (Variant B is more profitable)
 
-## Variant B maintains a stronger tail and captures more monetization from both old + new user streams.
 ## 👉 Winner Variant B
 
 <img width="1033" height="549" alt="download" src="https://github.com/user-attachments/assets/11a8b469-6d9d-43d0-84a2-48ef45b10fc2" />
@@ -159,7 +162,7 @@ STATISTICAL VERDICT: The difference is statistically significant based on user b
 ---
 
 ### f) Strategic Recommendation
-**Question: Which one should you prioritize, and why? If you could only make one of these
+**Question**: Which one should you prioritize, and why? If you could only make one of these
 improvements:
 1. Run the temporary 10-day sale (from d)
 2. Add the new, permanent user source (from e/f)**
